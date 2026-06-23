@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A special tribute for CJP Varun — made with love by Try to Kill">
+  <title>CJP VARUN — For You ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <p class="loader-text">Dropping into your heart...</p>
+    </div>
+  </div>
+
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <div class="header-badge">SQUAD GOAL</div>
+    <p class="header-sub">Made with ❤️ by <span>Try to Kill</span> — Your Best Friend</p>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <p class="hero-tag">⚡ BOOYAH ENERGY ⚡</p>
+        <h1 class="hero-name">
+          <span class="name-prefix">CJP</span>
+          <span class="name-main">VARUN</span>
+        </h1>
+        <p class="hero-romantic" id="typewriter"></p>
+        <button class="btn-fire" id="heartBtn">
+          <span class="btn-icon">💝</span>
+          Tap for Love
+        </button>
+        <div class="love-meter">
+          <div class="love-meter-label">
+            <span>Friendship HP</span>
+            <span id="lovePercent">0%</span>
+          </div>
+          <div class="love-meter-bar">
+            <div class="love-meter-fill" id="loveFill"></div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-hearts" id="floatingHearts"></div>
+    </section>
+
+    <section class="quotes" id="quotes">
+      <h2 class="section-title">💕 Romantic Drops</h2>
+      <div class="quote-carousel">
+        <div class="quote-card active" data-index="0">
+          <p>"In every battle royale of life, you're the only victory I need."</p>
+        </div>
+        <div class="quote-card" data-index="1">
+          <p>"They say revives are rare — but loving you feels like infinite respawns."</p>
+        </div>
+        <div class="quote-card" data-index="2">
+          <p>"You're not just my squad mate, Varun — you're my forever airdrop of happiness."</p>
+        </div>
+        <div class="quote-card" data-index="3">
+          <p>"When the zone closes in, I'd still run to you. Always."</p>
+        </div>
+        <div class="quote-card" data-index="4">
+          <p>"CJP Varun — the only legend I'd never leave behind on the battlefield of love."</p>
+        </div>
+      </div>
+      <div class="quote-dots" id="quoteDots"></div>
+    </section>
+
+    <section class="quiz" id="quiz">
+      <h2 class="section-title">🎯 Love Mission Quiz</h2>
+      <p class="quiz-sub">Answer these questions — only for the one and only Varun!</p>
+
+      <div class="quiz-progress">
+        <div class="quiz-progress-fill" id="quizProgress"></div>
+      </div>
+
+      <div class="quiz-container" id="quizContainer">
+        <div class="quiz-question active" data-q="0">
+          <span class="q-num">Q1 / 5</span>
+          <h3>If love was a loot drop, what would be inside?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-correct="true">💝 A heart that beats only for Varun</button>
+            <button class="quiz-opt">🔫 Just another gun skin</button>
+            <button class="quiz-opt">🎒 Empty backpack</button>
+          </div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <span class="q-num">Q2 / 5</span>
+          <h3>Who is the real MVP of this squad?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt">Try to Kill</button>
+            <button class="quiz-opt" data-correct="true">CJP Varun — obviously!</button>
+            <button class="quiz-opt">The zone itself</button>
+          </div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <span class="q-num">Q3 / 5</span>
+          <h3>What's stronger than a legendary airdrop?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt">A full squad wipe</button>
+            <button class="quiz-opt" data-correct="true">The bond between Varun & Try to Kill</button>
+            <button class="quiz-opt">Level 4 armor</button>
+          </div>
+        </div>
+
+        <div class="quiz-question" data-q="3">
+          <span class="q-num">Q4 / 5</span>
+          <h3>When life gets tough, who has your back?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt">Random teammates</button>
+            <button class="quiz-opt" data-correct="true">Your best friend — always in your squad</button>
+            <button class="quiz-opt">Nobody</button>
+          </div>
+        </div>
+
+        <div class="quiz-question" data-q="4">
+          <span class="q-num">Q5 / 5</span>
+          <h3>Final question: How much does Try to Kill care about Varun?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt">A little bit</button>
+            <button class="quiz-opt">More than diamonds</button>
+            <button class="quiz-opt" data-correct="true">Infinity × BOOYAH! ♾️</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-result hidden" id="quizResult">
+        <div class="result-burst"></div>
+        <h3>🎉 BOOYAH! MISSION COMPLETE!</h3>
+        <p class="result-msg">Varun, you are loved beyond any rank, beyond any match. This page was crafted just for you — because best friends like you are one in a million.</p>
+        <p class="result-from">— With all my heart,<br><strong>Try to Kill</strong> 💙</p>
+        <button class="btn-fire" id="replayQuiz">Play Again</button>
+      </div>
+    </section>
+
+    <section class="dedication" id="dedication">
+      <div class="dedication-card">
+        <div class="dedication-icon">🤝</div>
+        <h2>To My Best Friend</h2>
+        <p class="dedication-name">CJP Varun</p>
+        <p class="dedication-text">
+          From late-night Free Fire sessions to every laugh we've shared — you've been the real treasure.
+          No diamond, no skin, no victory royale could ever replace what you mean to me.
+        </p>
+        <p class="dedication-sign">Forever in your squad,<br><span>Try to Kill</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with 💕 for <strong>CJP Varun</strong></p>
+    <p class="footer-credit">Crafted by <span>Try to Kill</span> — Best Friend Forever</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
