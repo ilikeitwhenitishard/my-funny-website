@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEM_CRITICAL — Windows Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hack.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <canvas id="matrix"></canvas>
+
+  <div class="hack-screen" id="hackScreen">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <span class="pulse-dot"></span>
+        <span>SECURE_SHELL v4.2.1 — ROOT ACCESS GRANTED</span>
+      </div>
+      <div class="top-bar-right">
+        <span id="clock">00:00:00</span>
+        <span class="sep">|</span>
+        <span id="sessionId">SID-XXXXXXXX</span>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <aside class="panel panel-left">
+        <div class="panel-header">[ TARGET PROFILE ]</div>
+        <div class="profile-list" id="profileList"></div>
+        <div class="panel-header mt">[ NETWORK MAP ]</div>
+        <div class="network-map">
+          <div class="node center">YOU</div>
+          <div class="node n1">GW</div>
+          <div class="node n2">DNS</div>
+          <div class="node n3">SRV</div>
+          <div class="node n4">EXT</div>
+          <svg class="net-lines" viewBox="0 0 200 120">
+            <line x1="100" y1="60" x2="30" y2="20" class="net-line"/>
+            <line x1="100" y1="60" x2="170" y2="25" class="net-line"/>
+            <line x1="100" y1="60" x2="40" y2="100" class="net-line"/>
+            <line x1="100" y1="60" x2="165" y2="95" class="net-line"/>
+          </svg>
+        </div>
+      </aside>
+
+      <section class="panel panel-center">
+        <div class="alert-banner" id="alertBanner">
+          <span class="alert-icon">⚠</span>
+          <span id="alertText">UNAUTHORIZED ACCESS DETECTED — REMOTE SESSION ACTIVE</span>
+        </div>
+
+        <div class="terminal" id="terminal"></div>
+
+        <div class="progress-section">
+          <div class="progress-row">
+            <span class="prog-label">Data Exfiltration</span>
+            <div class="prog-bar"><div class="prog-fill" id="prog1"></div></div>
+            <span class="prog-pct" id="pct1">0%</span>
+          </div>
+          <div class="progress-row">
+            <span class="prog-label">Credential Harvest</span>
+            <div class="prog-bar"><div class="prog-fill" id="prog2"></div></div>
+            <span class="prog-pct" id="pct2">0%</span>
+          </div>
+          <div class="progress-row">
+            <span class="prog-label">Drive Encryption</span>
+            <div class="prog-bar"><div class="prog-fill danger" id="prog3"></div></div>
+            <span class="prog-pct" id="pct3">0%</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel panel-right">
+        <div class="panel-header">[ LIVE FEED ]</div>
+        <div class="webcam-frame">
+          <div class="webcam-static"></div>
+          <div class="webcam-overlay">
+            <span class="rec-dot"></span> REC
+            <span class="cam-label">CAM_01 — ACTIVE</span>
+          </div>
+          <div class="face-box"></div>
+        </div>
+
+        <div class="panel-header mt">[ FILE QUEUE ]</div>
+        <div class="file-queue" id="fileQueue"></div>
+
+        <div class="panel-header mt">[ KEYSTROKE LOG ]</div>
+        <div class="keylog" id="keylog"></div>
+      </aside>
+    </div>
+
+    <div class="bottom-bar">
+      <span>CPU: <span id="cpuUsage">--</span>%</span>
+      <span>MEM: <span id="memUsage">--</span>%</span>
+      <span>PING: <span id="pingVal">--</span>ms</span>
+      <span class="bottom-warning">DO NOT POWER OFF — SYSTEM LOCK ENGAGED</span>
+    </div>
+  </div>
+
+  <div class="prank-reveal hidden" id="prankReveal">
+    <div class="reveal-content">
+      <div class="reveal-icon">😂</div>
+      <h1>GOTCHA!</h1>
+      <p>You've been pranked.</p>
+      <p class="reveal-sub">Nothing was hacked. Your files are safe.<br>This was just a fake screen for fun.</p>
+      <button class="reveal-btn" id="closeBtn">Close Page</button>
+    </div>
+  </div>
+
+  <audio id="alarmBeep" loop preload="auto">
+    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIGWi77+efTRAMUKfj8LZjHAY4kdfyzHksBSR3x/DdkEAKFF606euoVRQKRp/g8r5sIQUrgc7y2Yk2CBlou+/nn00QDFCn4/C2YxwGOJHX8sx5LAUkd8fw3ZBAC" type="audio/wav">
+  </audio>
+
+  <script src="hack.js"></script>
+</body>
+</html>
