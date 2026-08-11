@@ -2,10 +2,10 @@
   'use strict';
 
   const ROMANTIC_LINES = [
-    'Varun, you are my favorite player in this game called life...',
+    'shivam, you are my favorite player in this game called life...',
     'Every BOOYAH feels empty without you in my squad...',
     'You revived my heart when I thought I was knocked down...',
-    'CJP Varun — the legend my heart always chooses...'
+    'shivam — the legend my heart always chooses...'
   ];
 
   let lineIndex = 0;
